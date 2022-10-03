@@ -34,6 +34,37 @@ class BaseController extends Controller
         return response()->json(['base' => Base::findOrFail($id), 'user' => User::findOrFail(Base::findOrFail($id)->user_id)]);
     }
 
+    /**
+     * @param $id
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     * @throws ValidationException
+     */
+    public function update($id, Request $request)
+    {
+        $this->validate($request, [
+                'nom' => 'required|string',
+                'credit' => 'required|integer|between:0,10000',
+                'oxygene' => 'required|integer|between:1,100'
+            ]
+        );
+
+        try {
+            $base = User::findOrFail($id)->base;
+
+            $base->nom = $request->nom;
+            $base->credit = $request->credit;
+            $base->oxygene = $request->oxygene;
+            $base->date_fin = null;
+            $base->update();
+
+            return response()->json(['status' => 'successful', 'message' => 'Base modifiée avec succès !']);
+
+        } catch (Exception $e) {
+            return response()->json(['status' => 'error', 'message' => 'Base introuvable !'], 409);
+        }
+    }
+
 
     /**
      * @param $id
