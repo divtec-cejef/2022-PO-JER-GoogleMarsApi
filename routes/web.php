@@ -79,6 +79,9 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         // Modification d'un badge
         $router->put('badges/{id}', ['uses' => 'BadgeController@update']);
 
+        // Modification d'une base
+        $router->put('bases/{id}', ['uses' => 'BaseController@update']);
+
         // Création d'un badge
         $router->post('badges', ['uses' => 'BadgeController@create']);
 
