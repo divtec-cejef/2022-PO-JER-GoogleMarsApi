@@ -9,5 +9,8 @@
 
 | Commandes | Description                    |
 | ------------- | ------------------------------ |
+| `composer install`      | Télécharger les packages   |
 | `php -S localhost:8000 -t public`      | Démarrer le serveur php       |
 | `php artisan migrate:fresh`   |  Réinitialiser la base de donnée    |
+| `php artisan key:generate` | `APP_KEY` dans le [fichier .env](https://github.com/divtec-cejef/2022-PO-JER-GoogleMarsApi/blob/Master/.env) |
+| `php artisan jwt:secret` | `JWT_SECRET` dans le [fichier .env](https://github.com/divtec-cejef/2022-PO-JER-GoogleMarsApi/blob/Master/.env) |
