@@ -5,6 +5,17 @@
 - [Lien de l'api](https://api-mars.divtec.ch/ "Lien de l'api")
 - [Lien du gitbook](https://divtec.gitbook.io/api-laravel-lumen/ "Lien du gitbook")
 
+## Instructions
+
+- Ouvrir le projet dans un IDE
+- Télécharger les packages
+- Générer les clés du [fichier .env](https://github.com/divtec-cejef/2022-PO-JER-GoogleMarsApi/blob/Master/.env)
+- Lancer XAMPP (Apache & MySQL)
+- Démarrer le serveur php
+- Initialiser la base de donnée
+- Installer et configurer Postman pour les requêtes
+
+
 ## Commandes utiles
 
 | Commandes | Description                    |
